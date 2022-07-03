@@ -1,69 +1,31 @@
 package main
 
 import (
-	"bufio"
+	"fmt"
 	"os"
-	"regexp"
 	"sort"
 	"strings"
-)
 
-func check(err error) {
-	if err != nil {
-		panic(err)
-	}
-}
+	"github.com/ryanmahan/gofind/common"
+	"github.com/ryanmahan/gofind/readers"
+)
 
 func handleDir(path string) map[string][]string {
 	entries, err := os.ReadDir(path)
-	check(err)
+	common.Check(err)
 	index := make(map[string][]string)
 	for _, entry := range entries {
 		entryInfo, err := entry.Info()
-		check(err)
-		curr := make(map[string][]string)
-		if entryInfo.IsDir() {
-			curr = handleDir(path + "/" + entryInfo.Name())
-		} else {
-			curr = indexFile(path + "/" + entryInfo.Name())
-		}
-
-		for key, entry := range curr {
-			if index[key] != nil {
-				index[key] = append(index[key], entry...)
+		common.Check(err)
+		tokenizer := readers.BaseTokenizer{Path: path + "/" + entryInfo.Name()}
+		curr := tokenizer.Index()
+		for _, word := range curr {
+			fmt.Println(word)
+			if index[word] != nil {
+				index[word] = append(index[word], tokenizer.Path)
 			} else {
-				index[key] = entry
+				index[word] = []string{tokenizer.Path}
 			}
-		}
-	}
-	return index
-}
-
-func indexFile(path string) map[string][]string {
-	file, err := os.Open(path)
-	check(err)
-	scanner := bufio.NewScanner(file)
-
-	scanner.Split(func(data []byte, eof bool) (advance int, token []byte, err error) {
-		if eof {
-			return len(data), data, bufio.ErrFinalToken
-		}
-		for index, token := range data {
-			if index > 0 && (token == '\n' || token == ' ') {
-				return index + 1, data[0:index], nil
-			}
-		}
-		return 0, nil, nil
-	})
-
-	index := make(map[string][]string)
-	reg, err := regexp.Compile("(^[^A-Za-z0-9]+)|([^A-Za-z0-9]+$)")
-	check(err)
-
-	for scanner.Scan() {
-		word := reg.ReplaceAllString(strings.ToLower(scanner.Text()), "")
-		if len(word) > 0 {
-			index[word] = []string{path}
 		}
 	}
 	return index
@@ -74,18 +36,33 @@ func main() {
 	args := os.Args[1:]
 	path := args[0]
 	file, err := os.Open(args[0])
-	check(err)
+	common.Check(err)
 	fileInfo, err := file.Stat()
-	check(err)
-	var index map[string][]string
+	common.Check(err)
+	index := make(map[string][]string)
 	if fileInfo.IsDir() {
 		index = handleDir(path)
 	} else {
-		index = indexFile(path)
+		var tokenizer readers.Tokenizer
+		if strings.Contains(path, ".pdf") {
+			tokenizer = readers.NewPDFTokenizer(path)
+		} else {
+			tokenizer = readers.NewBaseTokenizer(path)
+		}
+		
+		curr := tokenizer.Index()
+		for _, word := range curr {
+			fmt.Println(word)
+			if index[word] != nil {
+				index[word] = append(index[word], path)
+			} else {
+				index[word] = []string{path}
+			}
+		}
 	}
 
 	outputFile, err := os.Create("index.txt")
-	check(err)
+	common.Check(err)
 
 	keys := make([]string, len(index))
 
