@@ -1,0 +1,307 @@
+CS6750 M3
+Ryan Mahan
+rmahan6@gatech.edu
+Abstract—When it comes to home maintenance, keeping track of
+what needs to be done when is difficult. There’s usually multiple
+maintenance tasks per appliance and they all need to be completed
+on different cadences. It’s important that maintenance is completed
+but it is often forgotten. This leads to higher home maintenance
+costs and inefficient appliances. Through improving the interface
+for remembering to perform maintenance, we can increase appliance lifespans and reduce energy costs for homeowners. We can improve our users lives by providing a mobile solution that organizes
+and notifies home owners when it is time to perform maintenance.
+1 BRAINSTORMING PLAN
+At my work we do an activity called “Crazy 8s” for brainstorming. This activity
+is similar to the lecture’s brainstorming activity. The goal of the activity is that
+everyone involved individually brainstorms 8 ideas, one per minute, for whatever
+problem we’re trying to solve. Usually we come up with a few good ideas and a
+lot of bad ideas. I’ll spend 8 minutes, generating and thinking about a single idea
+each minute. I find that assigning one minute per idea places a lot of pressure to
+generate an idea, and produces a varying set of ideas. By the end, I’ll have 8 ideas
+that should vary widely. Then I can take those ideas and work through them to
+combine and create a few alternatives I can focus on.
+2 BRAINSTORMING EXECUTION
+2.1 Results
+2.1.1 Crazy 8s
+Each top level bullet is a one-minute chunk, subsequent bullets are additions or
+clarifications added within that minute. I brainstormed in this document, so these
+are the raw notes from that session.
+•
+
+Mobile app that uses system notifications to tell the user when maintenance
+needs to be done
+•
+
+Can track different tasks and appliances in the app
+
+1
+
+•
+
+Can see upcoming tasks in app
+
+•
+
+Could use bluetooth headsets to have audio guides for tasks
+
+•
+
+Can hook into the phones calendar and contacts to organize when and who to
+call for maintenance the user can’t perform
+
+•
+
+Augmented reality: lets the user put on glasses and walk through their home,
+with an overlay of what needs to be done when
+•
+
+Strong physical connection between where a task needs to take place
+
+•
+
+Could use AR to guide users through tasks
+
+•
+
+Tech isn’t really there yet
+
+•
+
+Users may not walk around their whole house and forget tasks
+
+•
+
+AR notification systems dont exist, but would be difficult to ignore reminders
+so people wouldnt forget their tasks.
+
+•
+
+VR: Similar to the AR idea, but more virtual
+•
+
+Could have users practice and learn certain tasks in VR that they’ve never done
+before and are nervous to attempt
+
+•
+
+Could better list and have users “fly” around their house seeing all the different
+tasks need to be done where
+
+•
+•
+
+Users may not put on their headset just to check in on tasks
+
+Integrate into smart home tech
+•
+
+Users are adopting smart home tech like smart fridges and smarter house
+furnaces
+
+•
+
+We could integrate better sensors into the appliances so we can avoid maintenance costs when they’re not necessary and could predict maintenance before
+it is needed.
+
+•
+
+•
+
+•
+
+•
+
+Users could receive push notifications on their phone via email or text still
+
+•
+
+New appliances could have this + being easily serviceable as a selling point
+
+Watch extension of mobile app
+•
+
+add a step by step guide like a recipe that people can follow on their watch
+
+•
+
+extend notifications to the watch
+
+•
+
+text only interface because of size
+
+Email, text, in app reminders
+•
+
+include some links to where to purchase different tools
+
+•
+
+what tools might be needed
+
+•
+
+other tasks they can do alongside it
+
+•
+
+Convey the importance of the maintenance in notification
+
+AR guided set up of appliances
+
+2
+
+•
+
+could scan barcodes, take pictures of appliances
+
+•
+
+what if we could scan like a fridge, find the coils, then use that to tell the user
+“here are the coils, these need to be vacuumed” as a learning tool.
+
+•
+
+could use this with other appliances as well. “This is your furnace. Here’s
+where the filter likely goes in”
+
+•
+•
+
+useful method of education
+
+voice assistant
+•
+
+tells you at the beginning of each week what should get done
+
+•
+
+you can ask what needs to be done, what tools you need, how to do it
+
+•
+
+could send links to your phone about purchasing tools, guides, could say them
+verbally
+
+•
+
+could integrate with smart home appliances to track usage and do use-based
+maintenance rather than time based
+
+•
+
+could connect with the seasons and tell you when to do chimney cleaning,
+spring cleaning, etc.
+
+3 SELECTION CRITERIA
+Looking back at my needfinding notes it seemed like users needed (in order of
+priority):
+1. Reminders
+2. Check what should be done in the next few weeks
+3. Track maintenance they have done, be told of maintenance they didn’t know
+about before
+4. Track who, what, when certain contractors, plumbers, other workers come to
+the house so they can be contacted again
+5. Be taught how to preform the maintenance
+I used the following quotes and requirements from my needfinding to inform
+those criteria
+Their ultimate goal, paraphrased from my interview:
+To make appliances last longer, operate safely at peak performance and
+efficiency.
+And another need my interviewees mentioned:
+
+3
+
+Spot you can put your contacts down (electrician, plumber, heating system, painter, pesticides, carpentry, who made the patio?) So in 5 years
+if you’re upgrading something and if you can call them again
+What they need, informed from my interface evaluation:
+. . . provide users with a method for planning around upcoming tasks,
+watch appliance lifespans, and help users accomplish their tasks.
+And their tasks, informed by my participant observation and interface evaluation:
+1. Remembering to perform maintenance
+2. Monitoring appliance health and previous maintenance
+Using this selection criteria, I’d like to explore the mobile app, the augmented
+reality interface, and the integration with home smart devices. These interfaces
+have the best ability to meet the user where they are and provide a low barrier
+to entry for becoming organized. Ideally augmented reality and smart devices
+would be more ubiquitous in order to a wider user base, but I want to explore
+them because of the direct physical connection they can make between a to-do
+list and the appliances that need maintenance. The mobile app idea lacks this
+physical connection, but allows a wider user base to organize on a pre-existing
+device with a familiar interface. Exploring these prototypes together will help me
+further iterate the designs and the pros and cons of each.
+4 PROTOTYPE 1: CARDS
+For my mobile app idea, I wanted to do some cards prototyping. For my “paper” I
+used my iPad and Procreate. I started with a simple paper prototype for my mobile
+app idea, but wanted to also model the user’s ability to see more information about
+their tasks. From left to right, I drew the flow of getting a notification and tapping
+on it, looking at the list of tasks to complete, and lastly a detailed task page.
+This prototype fills the user’s need for remembering to perform maintenance, and
+has a small indicator of the organization for different contacts. It’s missing a bit of
+functionality my users wanted, the biggest item being appliance based tracking.
+I think that could be added on in another card deck that models that user flow
+better. It shows how users could be taught what to do, given the steps on the final
+
+4
+
+Figure 1 — Cards prototype
+
+task details page. This prototype would be good for verifying the user’s main
+need of reminders, and then building on top of that with the other functionality.
+This prototype should work well with my audience, it meets the user where they
+are. It focuses on their main need of a method for reminders, and will help them
+achieve their goal of making their appliances last longer.
+5 PROTOTYPE 2: WIREFRAME
+For the augmented reality interface, I made a wireframe out of a picture of my
+kitchen with what I think the overlay could look like.
+This prototype has the same issues as the one above. To put all the information I
+identified in a needfinding would be too much for one interface. I again focused on
+the reminders and showing the user what needs to be done this month. The overlay
+includes elements for highlighting tasks the user is looking at with different levels
+of emphasis and a block in the bottom right to show what needs to be done that
+month. Having made the prototype, I still feel that this isn’t the best solution
+for my users, the technology isn’t ubiquitous enough (yet?) and prioritizing the
+information of where a task is accomplished doesn’t address a users primary need.
+The information density is quite low, restricting the interface to only show a few
+tasks rather than all the information the user wants. This could be a better interface
+
+5
+
+Figure 2 — Prototype for the augmented reality interface
+
+for doing the actual task, but it isn’t the right interface for showing what needs to
+be done.
+6 PROTOTYPE 3: TEXT
+For my integration with smart home devices, I chose a text prototype. There would
+be too many different interfaces, from ovens to fridges to furnaces to accurately
+prototype how this could fit in all contexts.
+Every 6 months, the screen on the smart fridge will show a banner
+with a warning message to clean the coils and gasket. This message
+includes some more information, including information on why cleaning the coils and gasket is important. When you tap on the message
+you are taken to a screen that includes more information on how to
+vacuum the coils and gasket. Once done you can tap a confirmation that
+you’ve finished and you won’t see the notification for another 6 months.
+Other visible appliances will follow the fridge example, having screens
+that can guide you through the task, or if not possible will guide you
+through your phone. Less visible appliances such as your house stove
+or furnace will send a notification to your phone (via email, sms, or an
+app). The furnace, for instance, will send you a notification after it has
+
+6
+
+sensed heating season over to contact your chimney sweep. Tapping the
+notification will lead you to their contact information.
+Overall I prefer having the visual to go along with a description, but I’m happy
+with the amount of detail and functionality you can quickly describe in a text
+prototype. I chose the same scope here as the other prototypes again for clarity.
+This prototype is missing a method for seeing all the tasks that need to be done in
+the future and tracking of non-smart appliances. Integrating with smart appliances
+does not meet my user’s needs well, as they want something that can increase
+the lifespan of their current appliances, not their next ones (if they chose to spend
+more for smart appliances). There is an underlying want for saving money by
+performing their scheduled maintenance, and I do not see my users spending
+more for smart appliances over saving on a less functional appliance. Out of the
+three prototypes, I would say this fits my users the worst.
+
+7
+
